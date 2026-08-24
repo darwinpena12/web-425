@@ -1,15 +1,33 @@
 import { Component } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
+import { RouterLink, RouterLinkActive, RouterOutlet } from '@angular/router';
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet],
+  imports: [RouterLink, RouterLinkActive, RouterOutlet],
   template: `
     <header>
       <nav>
-        <a href="/">RPG Character Builder</a>
+        <a routerLink="/">RPG Character Builder</a>
         <span> | </span>
-        <a href="/">Home</a>
+
+        <a
+          routerLink="/"
+          routerLinkActive="active"
+          [routerLinkActiveOptions]="{ exact: true }"
+        >
+          Home
+          <span> | </span>
+        </a>
+
+        <a routerLink="/classes" routerLinkActive="active">
+          Classes
+          <span> | </span>
+        </a>
+
+        <a routerLink="/about" routerLinkActive="active">
+          About
+        </a>
+
       </nav>
     </header>
 

@@ -1,0 +1,12 @@
+<section class="class-list">
+  <h1>Choose a character Class</h1>
+  <div class="class-list">
+    @for (characterClass of classes; track characterClass.id) {
+      <article>
+        <a [routerLink]="['/classes', characterClass.id]">{{ characterClass.name }}</a>
+        <p>{{ characterClass.description }}</p>
+      </article>
+    }
+
+  </div>
+</section>
