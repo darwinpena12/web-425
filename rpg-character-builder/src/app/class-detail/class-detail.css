@@ -1,0 +1,80 @@
+.class-detail-page {
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.class-detail-header {
+  margin-bottom: 2rem;
+  padding: 3rem 2rem;
+  text-align: center;
+  border-radius: 18px;
+  background: linear-gradient(135deg, #1e293b, #334155);
+  color: white;
+}
+
+.class-detail-header .eyebrow {
+  margin-bottom: 0.75rem;
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  opacity: 0.75;
+}
+
+.class-detail-header h1 {
+  margin: 0 0 1rem;
+  font-size: clamp(2.5rem, 6vw, 4rem);
+  line-height: 1.1;
+  text-transform: capitalize;
+}
+
+.class-id {
+  margin: 0;
+  font-size: 0.9rem;
+  opacity: 0.75;
+}
+
+.class-detail-card {
+  padding: 2.5rem;
+  border: 1px solid #e2e8f0;
+  border-radius: 16px;
+  background: white;
+  box-shadow: 0 8px 25px rgba(15, 23, 42, 0.08);
+}
+
+.class-detail-card h2 {
+  margin-bottom: 1rem;
+  font-size: 1.75rem;
+}
+
+.class-detail-card > p {
+  margin-bottom: 2rem;
+  color: #475569;
+  font-size: 1.05rem;
+  line-height: 1.7;
+}
+
+.class-detail-actions {
+  padding-top: 1.5rem;
+  border-top: 1px solid #e2e8f0;
+}
+
+.back-link {
+  font-weight: 700;
+  color: #b45309;
+  text-decoration: none;
+}
+
+.back-link:hover {
+  text-decoration: underline;
+}
+
+@media (max-width: 600px) {
+  .class-detail-header {
+    padding: 2.5rem 1.5rem;
+  }
+
+  .class-detail-card {
+    padding: 1.5rem;
+  }
+}

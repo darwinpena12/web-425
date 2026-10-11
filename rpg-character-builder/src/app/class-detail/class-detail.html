@@ -1,6 +1,31 @@
 <section class="class-detail-page">
-  <h1>Character Class</h1>
-  <p class="class-id">
-    Route Identifier: {{ id }}
-  </p>
+
+  <div class="class-detail-header">
+    <p class="eyebrow">Character Class</p>
+
+<h1>{{ id }}</h1>
+
+<p class="class-id">
+  Route Identifier: {{ id }}
+</p>
+
+  </div>
+
+  <div class="class-detail-card">
+    <h2>Class Overview</h2>
+
+<p>
+  You have selected the {{ id }} character class. This class provides
+  unique abilities and strengths that can shape your character's role
+  throughout the adventure.
+</p>
+
+<div class="class-detail-actions">
+  <a routerLink="/classes" class="back-link">
+    ← Back to Classes
+  </a>
+</div>
+
+  </div>
+
 </section>

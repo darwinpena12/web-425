@@ -3,6 +3,7 @@ import { RouterLink, RouterLinkActive, RouterOutlet } from '@angular/router';
 
 @Component({
   selector: 'app-root',
+  standalone: true,
   imports: [RouterLink, RouterLinkActive, RouterOutlet],
   template: `
     <header>
@@ -24,9 +25,16 @@ import { RouterLink, RouterLinkActive, RouterOutlet } from '@angular/router';
           <span> | </span>
         </a>
 
+        <a routerLink="/builder" routerLinkActive="active">
+          Character Builder
+          <span> | </span>
+        </a>
+
         <a routerLink="/about" routerLinkActive="active">
           About
         </a>
+
+      
 
       </nav>
     </header>

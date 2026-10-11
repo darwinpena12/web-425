@@ -1,12 +1,34 @@
-<section class="class-list">
-  <h1>Choose a character Class</h1>
+<section class="classes-page">
+
+  <div class="classes-heading">
+    <p class="eyebrow">Character Builder</p>
+    <h1>Choose Your Character Class</h1>
+    <p>
+      Choose a class that matches your play style and discover the abilities
+      that will shape your character's adventure.
+    </p>
+  </div>
+
   <div class="class-list">
     @for (characterClass of classes; track characterClass.id) {
-      <article>
-        <a [routerLink]="['/classes', characterClass.id]">{{ characterClass.name }}</a>
-        <p>{{ characterClass.description }}</p>
-      </article>
-    }
+      <article class="class-card">
+
+    <div class="class-card-content">
+      <h2>{{ characterClass.name }}</h2>
+
+      <p>{{ characterClass.description }}</p>
+
+      <a
+        class="class-link"
+        [routerLink]="['/classes', characterClass.id]"
+      >
+        View Class →
+      </a>
+    </div>
+
+  </article>
+}
 
   </div>
+
 </section>

@@ -1,0 +1,79 @@
+.classes-page {
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.classes-heading {
+  max-width: 750px;
+  margin: 0 auto 3rem;
+  text-align: center;
+}
+
+.classes-heading .eyebrow {
+  margin-bottom: 0.75rem;
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: #b45309;
+}
+
+.classes-heading h1 {
+  margin-bottom: 1rem;
+  font-size: clamp(2.25rem, 5vw, 3.5rem);
+  line-height: 1.1;
+}
+
+.classes-heading > p:last-child {
+  color: #475569;
+  font-size: 1.1rem;
+  line-height: 1.7;
+}
+
+.class-list {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+}
+
+.class-card {
+  padding: 2rem;
+  border: 1px solid #e2e8f0;
+  border-radius: 14px;
+  background: white;
+  box-shadow: 0 8px 25px rgba(15, 23, 42, 0.08);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.class-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 14px 35px rgba(15, 23, 42, 0.14);
+}
+
+.class-card h2 {
+  margin-bottom: 1rem;
+  font-size: 1.5rem;
+  color: black;
+}
+
+.class-card p {
+  margin-bottom: 1.5rem;
+  color: #475569;
+  line-height: 1.6;
+}
+
+.class-link {
+  font-weight: 700;
+  color: #b45309;
+  text-decoration: none;
+}
+
+.class-link:hover {
+  text-decoration: underline;
+}
+
+@media (max-width: 800px) {
+  .class-list {
+    grid-template-columns: 1fr;
+  }
+}

@@ -4,6 +4,7 @@ import { CharacterClass } from '../models/character-class';
 
 @Component({
   selector: 'classes-page',
+  standalone: true,
   imports: [RouterLink],
   templateUrl: './classes.html',
   styleUrl: './classes.css',

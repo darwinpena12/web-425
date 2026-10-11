@@ -1,9 +1,10 @@
 import { Component } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, RouterLink } from '@angular/router';
 
 @Component({
   selector: 'class-detail-page',
-  imports: [],
+  standalone: true,
+  imports: [RouterLink],
   templateUrl: './class-detail.html',
   styleUrl: './class-detail.css',
 })

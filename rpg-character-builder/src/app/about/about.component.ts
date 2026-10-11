@@ -3,6 +3,7 @@ import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'about-title',
+  standalone: true,
   imports: [],
   templateUrl: './about.html',
   styleUrl: './about.css',
