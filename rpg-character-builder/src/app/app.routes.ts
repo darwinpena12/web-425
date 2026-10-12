@@ -5,6 +5,8 @@ import { ClassDetailComponent } from './class-detail/class-detail.component';
 import { AboutComponent } from './about/about.component';
 import { AbilityRollerComponent } from './ability-roller/ability-roller.component';
 import { CharacterBuilderComponent } from './character-builder/character-builder.component';
+import { authGuard } from './auth.guard';
+import { SigninComponent } from './signin/signin.component';
 
 export const routes: Routes = [
   {
@@ -31,6 +33,12 @@ export const routes: Routes = [
     }
   },
   {
-    path: 'builder', component: CharacterBuilderComponent
+    path: 'signin',
+    component: SigninComponent
+  },
+  {
+    path: 'builder', 
+    component: CharacterBuilderComponent,
+    canActivate: [authGuard]
   }
 ];

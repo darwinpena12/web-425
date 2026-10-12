@@ -1,5 +1,7 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { RouterLink, RouterLinkActive, RouterOutlet } from '@angular/router';
+import { Auth } from './services/auth';
+import { CookieService } from 'ngx-cookie-service';
 
 @Component({
   selector: 'app-root',
@@ -52,13 +54,26 @@ import { RouterLink, RouterLinkActive, RouterOutlet } from '@angular/router';
             >
               Feedback
             </a>
-            <a
-            class="w4-nav-link"
-            routerLink="/signin"
-            routerLinkActive="active"
-            >
-              Sign-In
-            </a>
+            @if (email) {
+              <span class="w4-nav-link">
+                {{ email }}
+              </span>
+              <button
+                class="w4-nav-link"
+                type="button"
+                (click)="signout()"
+              >
+                Sign-Out
+              </button>
+              } @else {
+                <a
+                  class="w4-nav-link"
+                  routerLink="/signin"
+                  routerLinkActive="active"
+                >
+                  Sign-In
+                </a>
+              }
           </div>
         </nav>
       </header>
@@ -92,7 +107,26 @@ import { RouterLink, RouterLinkActive, RouterOutlet } from '@angular/router';
   </div>
   `
 })
-export class AppComponent {
+export class AppComponent implements OnInit {
   readonly title = 'virtual-taco-stand';
   readonly currentYear = new Date().getFullYear();
+
+  email?: string;
+
+  constructor(
+    private authService: Auth,
+    private cookieService: CookieService
+  ) {}
+
+  ngOnInit(): void {
+    this.authService.getAuthState().subscribe(isAuthenticated => {
+      this.email = isAuthenticated
+      ? this.cookieService.get('session_user')
+      : undefined;
+    });
+  }
+
+  signout(): void {
+    this.authService.signout();
+  }
 }

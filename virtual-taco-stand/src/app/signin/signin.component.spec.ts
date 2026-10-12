@@ -1,6 +1,7 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
-
+import { provideRouter } from '@angular/router';
 import { SigninComponent } from './signin.component';
+import { Auth } from '../services/auth';
 
 describe('SigninComponent', () => {
   let component: SigninComponent;
@@ -8,7 +9,16 @@ describe('SigninComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [SigninComponent]
+      imports: [SigninComponent],
+      providers: [
+        provideRouter([]),
+        {
+          provide: Auth,
+          useValue: {
+            signin: jasmine.createSpy('signin')
+          }
+        }
+      ]
     })
     .compileComponents();
 

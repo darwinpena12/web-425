@@ -1,6 +1,8 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { FormsModule, NgForm} from '@angular/forms';
 import { Character } from '../models/character';
+import { AuthService } from '../auth.service';
+import { Router } from '@angular/router';
 
 @Component({
     selector: 'app-character-builder',
@@ -8,6 +10,9 @@ import { Character } from '../models/character';
     imports: [FormsModule],
     template:`
       <h1>Character Builder</h1>
+      <button type="button" (click)="signout()">
+        Sign Out
+      </button>
 
       <form 
         #characterForm="ngForm"
@@ -89,6 +94,12 @@ import { Character } from '../models/character';
 })
 
 export class CharacterBuilderComponent {
+  private authService = inject(AuthService);
+  private router = inject(Router);
+  signout(): void {
+    this.authService.signout();
+    this.router.navigate(['/']);
+  }
   character: Character = {
     name: '',
     characterClass: '',
