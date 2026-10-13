@@ -17,7 +17,9 @@ export class Auth {
 		}
 	];
 
-	private readonly authState = new BehaviorSubject<boolean>(false);
+	private readonly authState = new BehaviorSubject<boolean>(
+		this.cookieService.check('session_user')
+	);
 
 	getAuthState() {
 		return this.authState.asObservable();

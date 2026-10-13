@@ -32,9 +32,12 @@ import { RouterLink, RouterLinkActive, RouterOutlet } from '@angular/router';
 
         <a routerLink="/about" routerLinkActive="active">
           About
+          <span> | </span>
         </a>
 
-      
+        <a routerLink="/profile" routerLinkActive="active">
+          Profile
+        </a>
 
       </nav>
     </header>
