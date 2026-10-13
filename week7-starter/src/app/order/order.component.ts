@@ -1,5 +1,6 @@
 export interface Taco {
   id: number;
+  orderItemId?: number;
   name: string;
   price: number;
   noOnions?: boolean;
@@ -93,6 +94,8 @@ import { OrderSummaryComponent } from '../order-summary/order-summary.component'
   `
 })
 export class OrderComponent {
+  private nextOrderItemId = 1;
+
   tacos: Taco[];
   order: Order;
   selectedTacoId: number;
@@ -131,6 +134,7 @@ export class OrderComponent {
     if (selectedTaco !== undefined) {
       const tacoToAdd: Taco = {
         id: selectedTaco.id,
+        orderItemId: this.nextOrderItemId++,
         name: selectedTaco.name,
         price: selectedTaco.price,
         noOnions: this.noOnions,
@@ -146,10 +150,11 @@ export class OrderComponent {
     }
   }
 
-  removeTaco(index: number) {
+  removeTaco(orderItemID: number) {
   this.order = {
     ...this.order,
-    tacos: this.order.tacos.filter((_, tacoIndex) => tacoIndex !== index)
+    tacos: this.order.tacos.filter(
+      (taco, tacoIndex) => (taco.orderItemId ?? tacoIndex )!== orderItemID)
   };
 
   this.orderUpdated.emit(this.order);

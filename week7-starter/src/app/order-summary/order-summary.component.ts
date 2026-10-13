@@ -10,7 +10,7 @@ import { Order } from '../order/order.component';
     <h1 class="w4-sr-only">Order Summary</h1>
     @if (order.tacos.length > 0) {
       <ul class="w4-summary-list">
-        @for (taco of order.tacos; track $index; let i = $index) {
+        @for (taco of order.tacos; track taco.orderItemId ?? $index; let i = $index) {
           <li>
             <div class="w4-item-heading">
               <strong>Item {{ i + 1 }} - {{ taco.name }}</strong>
@@ -26,7 +26,7 @@ import { Order } from '../order/order.component';
                 <p>No cilantro</p>
               }
             </div>
-            <button type="button" (click)="removeTaco(i)">
+            <button type="button" (click)="removeTaco(taco.orderItemId ?? i)">
               Remove Taco
             </button>
           </li>
@@ -57,8 +57,8 @@ export class OrderSummaryComponent {
 
   @Output() tacoRemoved = new EventEmitter<number>();
 
-  removeTaco(index: number) {
-    this.tacoRemoved.emit(index);
+  removeTaco(orderItemId: number) {
+    this.tacoRemoved.emit(orderItemId);
   }
 
   getTotal() {
