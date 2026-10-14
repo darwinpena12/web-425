@@ -34,6 +34,7 @@ import { AuthService } from './auth.service';
             <a class="w4-nav-link" routerLink="/menu" routerLinkActive="active">Menu</a>
             <a class="w4-nav-link" routerLink="/order" routerLinkActive="active">Order</a>
             <a class="w4-nav-link" routerLink="/daily-specials" routerLinkActive="active">Daily Specials</a>
+            <a class="w4-nav-link" routerLink="/featured-tacos" routerLinkActive="active">Featured Tacos</a>
             <a class="w4-nav-link" routerLink="/feedback" routerLinkActive="active">Feedback</a>
           </div>
         </nav>
@@ -54,6 +55,7 @@ import { AuthService } from './auth.service';
             <a routerLink="/menu">Menu</a>
             <a routerLink="/order">Order</a>
             <a routerLink="/daily-specials">Daily Specials</a>
+            <a routerLink="/featured-tacos">Featured Tacos</a>
             <a routerLink="/feedback">Feedback</a>
           </nav>
           <p class="w4-footer-copyright">&copy; {{ currentYear }} Virtual Taco Stand</p>

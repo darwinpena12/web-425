@@ -6,6 +6,7 @@ import { DailySpecialsComponent } from './daily-specials/daily-specials.componen
 import { FeedbackComponent } from './feedback/feedback.component';
 import { SigninComponent } from './signin/signin.component';
 import { authGuard } from './auth.guard';
+import { FeaturedTacosComponent } from './featured-tacos/featured-tacos.component';
 
 export const routes: Routes = [
   {
@@ -30,6 +31,10 @@ export const routes: Routes = [
     component: DailySpecialsComponent
   },
   {
+    path: 'featured-tacos',
+    component: FeaturedTacosComponent
+  },
+  {
     path: 'feedback',
     component: FeedbackComponent
   },
@@ -37,4 +42,5 @@ export const routes: Routes = [
     path: 'signin',
     component: SigninComponent
   }
+  
 ];
